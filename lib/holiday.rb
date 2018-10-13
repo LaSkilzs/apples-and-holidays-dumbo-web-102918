@@ -68,7 +68,7 @@ def all_supplies_in_holidays(holiday_hash)
           supply = val.pop
           supply = supply.join(", ")
           string = val.pop
-          string = string.to_s.capitalize
+          string = string.to_s.capitalize.gsub("_", " ")
           puts "  #{string}: #{supply}"
        end
      end
