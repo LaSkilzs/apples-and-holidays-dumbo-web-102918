@@ -36,10 +36,13 @@ end
 
 def add_new_holiday_with_supplies(holiday_hash, season, holiday_name, supply_array)
   
-  holiday_hash[holiday_name][season] = supply_array
-  # code here
-  # remember to return the updated hash
-  
+  prev = holiday_hash[season].to_a
+  holiday_hash[season] = {holiday_name => supply_array}
+  new_hash  = prev += holiday_hash[season].to_a
+  new_hash = new_hash.to_h
+  holiday_hash[season] = new_hash
+  holiday_hash
+
 
 end
 
